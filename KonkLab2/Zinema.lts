@@ -1,0 +1,9 @@
+range T= 1..3
+
+AULKI1=(erreserbatu[1] -> STOP).
+AULKI2=(erreserbatu[2] -> STOP).
+AULKI3=(erreserbatu[3] -> STOP).
+
+EROSLEA= (erreserbatu[a:T]->ticketajaso[a]->EROSLEA).
+
+||SISTEMA = ({a,b}::AULKI1 || {a,b}::AULKI2 || {a,b}::AULKI3 ||a:EROSLEA || b:EROSLEA).

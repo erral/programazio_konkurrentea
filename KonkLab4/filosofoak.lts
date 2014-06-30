@@ -1,0 +1,5 @@
+SARD = (get->put->SARD).
+FIL = (eseri->eskubi.get->ezker.get->jan->eskubi.put->ezker.put->altxatu->FIL).
+
+||AFARIA(N=5)=forall[i:0..N-1] 
+(fil[i]:FIL || {fil[i].ezker,fil[((i-1)+N)%N].eskubi}::SARD).

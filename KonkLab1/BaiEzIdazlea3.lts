@@ -1,0 +1,5 @@
+IDAZLEA = (idatzi -> IDAZLEA
+   	  |bukatu -> STOP).
+
+
+||BAIEZ3 = (a:IDAZLEA || b:IDAZLEA).

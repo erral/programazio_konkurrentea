@@ -1,0 +1,11 @@
+const Zenbat = 5
+range Int = 0..50
+
+BASATIA = (hartu -> BASATIA).
+
+SUKALDARIA = (bota -> SUKALDARIA).
+
+
+LAPIKOA(N=10) = LAPI[N],
+LAPI[v:Int] = (when (v>0) hartu -> LAPI[v-1]
+	      |bota -> LAPI [v+Zenbat]).

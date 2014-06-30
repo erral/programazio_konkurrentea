@@ -1,0 +1,35 @@
+// Pilaren arazoa
+// Hondokoa irteten dela ziurtatzeko indize bat erabiliko dugu
+// Indize hori zenbaki batera heltzean ateratzen bakarrik utziko dugu
+
+const False = 0
+const True = 1
+range Bool = False..True
+const MP = 3 // maximoa pila
+const PK = 2 // prozesu kopurua
+const DM = 5 // denbora maximoa prozesurik atera gabe
+range TMP = 0..MP
+range TMP_1 = 0..MP-1
+range TPK = 0..PK
+range TDM = 0..DM
+
+
+PROZESUA = (pos[i:TMP_1].sartu->pos[i].atera->PROZESUA).
+
+PILAKONTROLIKGABE = PILAKG[0],
+PILAKG[gaina:TMP] = 
+	(when (gaina < MP) pos[gaina].sartu    -> PILAKG[gaina+1]
+	|when (gaina > 0)  pos[gaina-1].atera -> PILAKG[gaina-1]
+).
+|| LANAKG = (p[TPK]:PROZESUA || p[TPK]::PILAKONTROLIKGABE).
+
+PILAKONTROLATUA = PILAK[0][0][False],
+PILAK[gaina:TMP][denb:TDM][husten:Bool] = 
+	(when (gaina < MP && !(denb == DM || husten))	pos[gaina].sartu   -> PILAK[gaina+1][denb+1][False]
+	|when (gaina > 0 &&  !(denb == DM || husten))	pos[gaina-1].atera -> PILAK[gaina-1][denb][False]
+	|when (gaina > 0 &&   (denb == DM || husten))	pos[gaina-1].atera -> PILAK[gaina-1][0][True]
+	|when (gaina == 0) 				pos[gaina].sartu   -> PILAK[gaina+1][0][False]).
+
+|| LANAK = (p[TPK]:PROZESUA || p[TPK]::PILAKONTROLATUA).
+
+

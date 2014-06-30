@@ -1,0 +1,7 @@
+KONTROLATZAILEA(N=4) = TOKIAK[N],
+TOKIAK[i:0..N] = (when(i>0) sartu -> TOKIAK[i-1]
+		 |when(i<N) irten -> TOKIAK[i+1]).
+SARRERAK = (sartu -> SARRERAK).
+IRTEERAK = (irten->IRTEERAK).
+
+||APARKALEKUA = (SARRERAK ||KONTROLATZAILEA(4) ||IRTEERAK).

@@ -1,0 +1,6 @@
+BAI_IDAZLEA = (idatziBai -> BAI_IDAZLEA
+               |bukatuBai -> STOP).
+EZ_IDAZLEA= (idatziEz -> EZ_IDAZLEA
+	    |bukatuEz -> STOP).
+
+||BAIEZ2 = (BAI_IDAZLEA ||EZ_IDAZLEA).

@@ -1,0 +1,9 @@
+const Max = 3
+range Int = 0..Max
+
+SEMAFOROA(N=0) = SEMA[N],
+SEMA[v:Int] = (gora ->SEMA[v+1]
+	      |when(v>0) behera->SEMA[v-1]).
+
+LOOP = (mutex.behera -> kritikoa->mutex.gora->LOOP).
+||SEMADEMO = (p[1..3]:LOOP || {p[1..3]}::mutex:SEMAFOROA(1)).

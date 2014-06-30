@@ -1,0 +1,13 @@
+IRTEN(N=6) = L[N],
+
+L[0] = (gora->STOP | eskubi -> L[1]),
+L[1] = (ezker->L[0] | eskubi -> L[2] | behera -> L[4]),
+L[2] = (ezker -> L[1] | behera-> L[5]),
+L[3] = (eskubi -> L[4] | behera-> L[6]),
+L[4] = (gora -> L[1] | ezker-> L[3]),
+L[5] = (gora -> L[2] | behera-> L[8]),
+L[6] = (gora -> L[3]),
+L[7] = (eskubi -> L[8]),
+L[8] = (ezker -> L[7] | gora -> L[5]).
+
+

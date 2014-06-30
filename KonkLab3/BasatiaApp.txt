@@ -1,0 +1,6 @@
+/*
+ * Programazio Konkurrentea 2002-2003
+ * 
+ * Basatiaren problema
+ *
+ */

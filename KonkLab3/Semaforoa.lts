@@ -1,0 +1,6 @@
+const Max = 3
+range Int = 0..Max
+
+SEMAFOROA(N=0) = SEMA[N],
+SEMA[v:Int] = (gora ->SEMA[v+1]
+	      |when(v>0) behera->SEMA[v-1]).

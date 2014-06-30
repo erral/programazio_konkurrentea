@@ -1,0 +1,16 @@
+
+SARD = (get->put->SARD).
+FIL = (eseri->eskubi.get->ezker.get->jan->eskubi.put->ezker.put->altxa->FIL).
+
+||AFARIA(N=5)=forall[i:0..N-1] 
+(fil[i]:FIL || {fil[i].ezker,fil[((i-1)+N)%N].eskubi}::SARD).
+
+const Max = 4
+range Int = 0..Max
+
+MAIORDOMOA(N=4) = SEMA[N],
+SEMA[v:Int] = (altxa->SEMA[v+1] | when (v>0) eseri->SEMA[v-1]).
+
+
+
+||AFARIKONTROLATUA = (AFARIA(5)|| fil[0..4]::MAIORDOMOA(4)).

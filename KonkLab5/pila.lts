@@ -1,0 +1,24 @@
+// Pilaren arazoa
+// Hondokoa irteten dela ziurtatzeko indize bat erabiliko dugu
+// Indize hori zenbaki batera heltzean ateratzen bakarrik utziko dugu
+
+const MP = 5 // maximoa pila
+const PK = 3 // prozesu kopurua
+const IM = 5 // indizearen balio maximoa
+const False = 0
+const True = 1
+range TMP = 0..MP-1
+range TPK = 0..PK-1
+range TIM = 0..IM-1
+range Bool = False..True
+
+PROZESUA = (pos[i:TMP].sartu->pos[i].atera->PROZESUA).
+
+HASPILA = PILA[0][0][False],
+PILA[barrura:0..MP][ind:0..IM][husten:Bool] = 
+(when (ind == IM || (husten && barrura != 0)) pos[barrura-1].atera -> PILA[barrura-1][0][True]
+|when (barrura <= MP && ind != IM && !husten) pos[barrura].sartu -> PILA[barrura+1][ind+1][False]
+|when (barrura > 0) pos[barrura-1].atera -> PILA[barrura-1][ind][False]
+|when (barrura == 0 && husten) pos[barrura].sartu -> PILA[barrura+1][ind+1][False]).
+
+|| LANA = (p[TPK]:PROZESUA || p[TPK]::HASPILA).
