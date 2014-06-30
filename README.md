@@ -1,2 +1,0 @@
-programazio_konkurrentea
-========================
